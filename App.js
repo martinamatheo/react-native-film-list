@@ -125,10 +125,6 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 
-  buttonRow: {
-    paddingBottom: 15
-  },
-
   buttonStyleOutside: {
     borderRadius: 5,
     backgroundColor: '#fee94e',
