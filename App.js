@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity, ActivityIndicator } from 'react-native';
+import InvertibleScrollView from 'react-native-invertible-scroll-view';
 
 export default class App extends React.Component {
 
@@ -62,11 +63,13 @@ export default class App extends React.Component {
           style={{ width: 200, height: 100, marginBottom: 5 }}
           PlaceholderContent={<ActivityIndicator />}
         />
-        <FlatList
-          inverted={this.state.inverted}
-          data={this.state.dataSource}
-          renderItem={this.renderItem}
-        />
+        <InvertibleScrollView>
+          <FlatList
+            inverted={this.state.inverted}
+            data={this.state.dataSource}
+            renderItem={this.renderItem}
+         />
+        </InvertibleScrollView>
         <Text style={styles.sortText}>Sort Episodes</Text>
         <View style={styles.buttonStyleOutside}>
           <TouchableOpacity onPress={this.toggleOrder}> 
